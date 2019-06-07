@@ -42,7 +42,12 @@ class UsersController < ApplicationController
   def contents
     @user=User.find(params[:id])
     @contents=@user.contents.page(params[:page])
-    
+    counts(@user)
+  end
+  
+  def likes
+    @user=User.find(params[:id])
+    @contents=@user.contents.page(params[:page])
   end
 
   private
